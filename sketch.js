@@ -10,6 +10,7 @@ var ObstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 
 var score;
 
+localStorage["highscore"]=0
 
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
@@ -182,6 +183,10 @@ function spawnObstacles() {
   
   trex.changeAnimation("running",trex_running);
   
+  if(localStorage["highscore"]<score){
+    localStorage["highscore"]=score
+  }
+    
   score = 0;
   
 }
